@@ -1,4 +1,5 @@
-;; -*- mode: lisp; eval: (local-set-key (kbd "C-c d")  (lambda () (interactive) (execute-kbd-macro (kbd "C-M-! echo 111")) ) ) -*-
+;; -*- mode: lisp; eval: (local-set-key (kbd "C-c d")  (lambda () (interactive) (execute-kbd-macro (kbd "C-x C-s <escape> & <down> k a n a t a <tab> - - d e b u g SPC - - c f g SPC <return>")) ) ) -*-
+
 
 ;; 速录宝小写键盘 Kanata 配置
 ;; 并击组：所有组合键放在一个 chords 组里
@@ -134,7 +135,308 @@
 
 
 
-======================
+  ;; ======================
+
+  ;; ===== 左右手同时：单键对应（补全）=====
+;; 第一行剩余对应
+  (e o) (macro e w)    ;; 左手 e + 右手 o → ew
+  (r i) (macro r e)    ;; 左手 r + 右手 i → re
+  (t u) (macro t r)    ;; 左手 t + 右手 u → tr
+  (t i) (macro t e)    ;; 左手 t + 右手 i → te
+  (t o) (macro t w)    ;; 左手 t + 右手 o → tw
+  (t p) (macro t q)    ;; 左手 t + 右手 p → tq
+  (r o) (macro r w)    ;; 左手 r + 右手 o → rw
+  (r p) (macro r q)    ;; 左手 r + 右手 p → rq
+  (e p) (macro e q)    ;; 左手 e + 右手 p → eq
+  (w p) (macro w q)    ;; 左手 w + 右手 p → wq
+  (w u) (macro w r)    ;; 左手 w + 右手 u → wr
+  (e u) (macro e r)    ;; 左手 e + 右手 u → er
+  (q o) (macro q w)    ;; 左手 q + 右手 o → qw
+  (q i) (macro q e)    ;; 左手 q + 右手 i → qe
+  (q u) (macro q r)    ;; 左手 q + 右手 u → qr
+  (w i) (macro w e)    ;; 左手 w + 右手 i → we
+
+;; 第二行剩余对应
+  (a l) (macro a s)    ;; 左手 a + 右手 l → as
+  (a k) (macro a d)    ;; 左手 a + 右手 k → ad
+  (a j) (macro a f)    ;; 左手 a + 右手 j → af
+  (a h) (macro a g)    ;; 左手 a + 右手 h → ag
+  (s j) (macro s f)    ;; 左手 s + 右手 j → sf
+  (s h) (macro s g)    ;; 左手 s + 右手 h → sg
+  (d j) (macro d f)    ;; 左手 d + 右手 j → df
+  (d l) (macro d s)    ;; 左手 d + 右手 l → ds
+  (d h) (macro d g)    ;; 左手 d + 右手 h → dg
+  (f l) (macro f s)    ;; 左手 f + 右手 l → fs
+  (f k) (macro f d)    ;; 左手 f + 右手 k → fd
+  (f h) (macro f g)    ;; 左手 f + 右手 h → fg
+  (g j) (macro g f)    ;; 左手 g + 右手 j → gf
+  (g l) (macro g s)    ;; 左手 g + 右手 l → gs
+  (g k) (macro g d)    ;; 左手 g + 右手 k → gd
+  (g ;) (macro g a)    ;; 左手 g + 右手 ; → ga
+  (s ;) (macro s a)    ;; 左手 s + 右手 ; → sa
+  (d ;) (macro d a)    ;; 左手 d + 右手 ; → da
+  (f ;) (macro f a)    ;; 左手 f + 右手 ; → fa
+
+;; 第三行剩余对应
+  (z .) (macro z x)    ;; 左手 z + 右手 . → zx
+  (z ,) (macro z c)    ;; 左手 z + 右手 , → zc
+  (z m) (macro z v)    ;; 左手 z + 右手 m → zv
+  (z n) (macro z b)    ;; 左手 z + 右手 n → zb
+  (x m) (macro x v)    ;; 左手 x + 右手 m → xv
+  (x n) (macro x b)    ;; 左手 x + 右手 n → xb
+  (c m) (macro c v)    ;; 左手 c + 右手 m → cv
+  (c n) (macro c b)    ;; 左手 c + 右手 n → cb
+  (c /) (macro c z)    ;; 左手 c + 右手 / → cz
+  (v n) (macro v b)    ;; 左手 v + 右手 n → vb
+  (v .) (macro v x)    ;; 左手 v + 右手 . → vx
+  (v ,) (macro v c)    ;; 左手 v + 右手 , → vc
+  (v /) (macro v z)    ;; 左手 v + 右手 / → vz
+  (b .) (macro b x)    ;; 左手 b + 右手 . → bx
+  (b ,) (macro b c)    ;; 左手 b + 右手 , → bc
+  (b /) (macro b z)    ;; 左手 b + 右手 / → bz
+  (x /) (macro x z)    ;; 左手 x + 右手 / → xz
+  (b m) (macro b v)    ;; 左手 b + 右手 m → bv
+
+;; ===== 左右手同时：双键组合对应（补全）=====
+  ;; e+f 行与其他组合
+  (e f u i) (macro y u)
+  (e f i o) (macro y i)
+  (e f u o) (macro y o)
+  (e f p u) (macro y p)
+  (e f j o) (macro y h)
+  (e f j k) (macro y j)
+  (e f k l) (macro y k)
+  (e f j l) (macro y l)
+  (e f j ;) (macro y ;)
+  (e f , l) (macro y n)
+  (e f m ,) (macro y m)
+  (e f , .) (macro y ,)
+  (e f m .) (macro y .)
+  (e f m /) (macro y /)
+
+  ;; e+r 行与其他组合
+  (e r j i) (macro u y)
+  (e r i o) (macro u i)
+  (e r u o) (macro u o)
+  (e r p u) (macro u p)
+  (e r j o) (macro u h)
+  (e r j k) (macro u j)
+  (e r k l) (macro u k)
+  (e r j l) (macro u l)
+  (e r j ;) (macro u ;)
+  (e r , l) (macro u n)
+  (e r m ,) (macro u m)
+  (e r , .) (macro u ,)
+  (e r m .) (macro u .)
+  (e r m /) (macro u /)
+
+  ;; w+e 行与其他组合
+  (w e j i) (macro i y)
+  (w e u i) (macro i u)
+  (w e u o) (macro i o)
+  (w e p u) (macro i p)
+  (w e j o) (macro i h)
+  (w e j k) (macro i j)
+  (w e k l) (macro i k)
+  (w e j l) (macro i l)
+  (w e j ;) (macro i ;)
+  (w e , l) (macro i n)
+  (w e m ,) (macro i m)
+  (w e , .) (macro i ,)
+  (w e m .) (macro i .)
+  (w e m /) (macro i /)
+
+  ;; w+r 行与其他组合
+  (w r j i) (macro o y)
+  (w r u i) (macro o u)
+  (w r i o) (macro o i)
+  (w r p u) (macro o p)
+  (w r j o) (macro o h)
+  (w r j k) (macro o j)
+  (w r k l) (macro o k)
+  (w r j l) (macro o l)
+  (w r j ;) (macro o ;)
+  (w r , l) (macro o n)
+  (w r m ,) (macro o m)
+  (w r , .) (macro o ,)
+  (w r m .) (macro o .)
+  (w r m /) (macro o /)
+
+  ;; q+r 行与其他组合
+  (q r j i) (macro p y)
+  (q r u i) (macro p u)
+  (q r i o) (macro p i)
+  (q r u o) (macro p o)
+  (q r j o) (macro p h)
+  (q r j k) (macro p j)
+  (q r k l) (macro p k)
+  (q r j l) (macro p l)
+  (q r j ;) (macro p ;)
+  (q r , l) (macro p n)
+  (q r m ,) (macro p m)
+  (q r , .) (macro p ,)
+  (q r m .) (macro p .)
+  (q r m /) (macro p /)
+
+  ;; w+f 行与其他组合
+  (w f u i) (macro h y)
+  (w f i o) (macro h i)
+  (w f u o) (macro h o)
+  (w f p u) (macro h p)
+  (w f j k) (macro h j)
+  (w f k l) (macro h k)
+  (w f j l) (macro h l)
+  (w f j ;) (macro h ;)
+  (w f , l) (macro h n)
+  (w f m ,) (macro h m)
+  (w f , .) (macro h ,)
+  (w f m .) (macro h .)
+  (w f m /) (macro h /)
+
+  ;; d+f 行与其他组合
+  (d f j i) (macro j y)
+  (d f u i) (macro j u)
+  (d f i o) (macro j i)
+  (d f u o) (macro j o)
+  (d f p u) (macro j p)
+  (d f j o) (macro j h)
+  (d f k l) (macro j k)
+  (d f j l) (macro j l)
+  (d f j ;) (macro j ;)
+  (d f , l) (macro j n)
+  (d f m ,) (macro j m)
+  (d f , .) (macro j ,)
+  (d f m .) (macro j .)
+  (d f m /) (macro j /)
+
+  ;; s+d 行与其他组合
+  (s d j i) (macro k y)
+  (s d u i) (macro k u)
+  (s d i o) (macro k i)
+  (s d u o) (macro k o)
+  (s d p u) (macro k p)
+  (s d j o) (macro k h)
+  (s d j k) (macro k j)
+  (s d j l) (macro k l)
+  (s d j ;) (macro k ;)
+  (s d , l) (macro k n)
+  (s d m ,) (macro k m)
+  (s d , .) (macro k ,)
+  (s d m .) (macro k .)
+  (s d m /) (macro k /)
+
+  ;; s+f 行与其他组合
+  (s f j i) (macro l y)
+  (s f u i) (macro l u)
+  (s f i o) (macro l i)
+  (s f u o) (macro l o)
+  (s f p u) (macro l p)
+  (s f j o) (macro l h)
+  (s f j k) (macro l j)
+  (s f k l) (macro l k)
+  (s f j ;) (macro l ;)
+  (s f , l) (macro l n)
+  (s f m ,) (macro l m)
+  (s f , .) (macro l ,)
+  (s f m .) (macro l .)
+  (s f m /) (macro l /)
+
+  ;; a+f 行与其他组合
+  (a f j i) (macro ; y)
+  (a f u i) (macro ; u)
+  (a f i o) (macro ; i)
+  (a f u o) (macro ; o)
+  (a f p u) (macro ; p)
+  (a f j o) (macro ; h)
+  (a f j k) (macro ; j)
+  (a f k l) (macro ; k)
+  (a f j l) (macro ; l)
+  (a f , l) (macro ; n)
+  (a f m ,) (macro ; m)
+  (a f , .) (macro ; ,)
+  (a f m .) (macro ; .)
+  (a f m /) (macro ; /)
+
+  ;; s+c 行与其他组合
+  (s c j i) (macro n y)
+  (s c u i) (macro n u)
+  (s c i o) (macro n i)
+  (s c u o) (macro n o)
+  (s c p u) (macro n p)
+  (s c j o) (macro n h)
+  (s c j k) (macro n j)
+  (s c k l) (macro n k)
+  (s c j l) (macro n l)
+  (s c j ;) (macro n ;)
+  (s c m ,) (macro n m)
+  (s c , .) (macro n ,)
+  (s c m .) (macro n .)
+  (s c m /) (macro n /)
+
+  ;; c+v 行与其他组合
+  (c v j i) (macro m y)
+  (c v u i) (macro m u)
+  (c v i o) (macro m i)
+  (c v u o) (macro m o)
+  (c v p u) (macro m p)
+  (c v j o) (macro m h)
+  (c v j k) (macro m j)
+  (c v k l) (macro m k)
+  (c v j l) (macro m l)
+  (c v j ;) (macro m ;)
+  (c v , l) (macro m n)
+  (c v , .) (macro m ,)
+  (c v m .) (macro m .)
+  (c v m /) (macro m /)
+
+  ;; x+c 行与其他组合
+  (x c j i) (macro , y)
+  (x c u i) (macro , u)
+  (x c i o) (macro , i)
+  (x c u o) (macro , o)
+  (x c p u) (macro , p)
+  (x c j o) (macro , h)
+  (x c j k) (macro , j)
+  (x c k l) (macro , k)
+  (x c j l) (macro , l)
+  (x c j ;) (macro , ;)
+  (x c , l) (macro , n)
+  (x c m ,) (macro , m)
+  (x c m .) (macro , .)
+  (x c m /) (macro , /)
+
+  ;; x+v 行与其他组合
+  (x v j i) (macro . y)
+  (x v u i) (macro . u)
+  (x v i o) (macro . i)
+  (x v u o) (macro . o)
+  (x v p u) (macro . p)
+  (x v j o) (macro . h)
+  (x v j k) (macro . j)
+  (x v k l) (macro . k)
+  (x v j l) (macro . l)
+  (x v j ;) (macro . ;)
+  (x v , l) (macro . n)
+  (x v m ,) (macro . m)
+  (x v , .) (macro . ,)
+  (x v m /) (macro . /)
+
+  ;; z+v 行与其他组合
+  (z v j i) (macro / y)
+  (z v u i) (macro / u)
+  (z v i o) (macro / i)
+  (z v u o) (macro / o)
+  (z v p u) (macro / p)
+  (z v j o) (macro / h)
+  (z v j k) (macro / j)
+  (z v k l) (macro / k)
+  (z v j l) (macro / l)
+  (z v j ;) (macro / ;)
+  (z v , l) (macro / n)
+  (z v m ,) (macro / m)
+  (z v , .) (macro / ,)
+  (z v m .) (macro / .)
+  
 
 )
 
