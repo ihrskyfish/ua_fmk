@@ -75,11 +75,50 @@
   (,) c       ;; 右手 , → c
   (m) v       ;; 右手 m → v
   (n) b       ;; 右手 n → b
-  (m l) n      ;; 右手 m+l 同时按 → n（带点）
+  (, l) n      ;; 右手 m+l 同时按 → n（带点）
   (m ,) m      ;; 右手 m+, 同时按 → m（带点）
   (, .) ,      ;; 右手 ,+. 同时按 → ,（带点）
   (m .) .      ;; 右手 m+. 同时按 → .（带点）
   (m /) /      ;; 右手 m+/ 同时按 → /（带点）
+
+;; ===== 左右手同时：对应位置组合 =====
+  ;; 第一行对应：q+p, w+o, e+i, r+u, t+y
+  (q p) (macro q q)
+  (w o) (macro w w)
+  (e i) (macro e e)
+  (r u) (macro r r)
+  (t y) (macro t t)
+
+  ;; 第二行对应：a+;, s+l, d+k, f+j, g+h
+  (a ;) (macro a a)
+  (s l) (macro s s)
+  (d k) (macro d d)
+  (f j) (macro f f)
+  (g h) (macro g g)
+
+  ;; 第三行对应：z+/, x+., c+,, v+m, b+n
+  (z /) (macro z z)
+  (x .) (macro x x)
+  (c ,) (macro c c)
+  (v m) (macro v v)
+  (b n) (macro b b)
+
+  ;; 左右对应组合同时按 → 输出两次
+  (e f j i) (macro y y)
+  (e r u i) (macro u u)
+  (w e i o) (macro i i)
+  (w r u o) (macro o o)
+  (q r p u) (macro p p)
+  (w f j o) (macro h h)
+  (d f j k) (macro j j)
+  (s d k l) (macro k k)
+  (s f j l) (macro l l)
+  (a f j ;) (macro ; ;)
+  (s c ,  l) (macro n n)
+  (c v m ,) (macro m m)
+  (x c , .) (macro , ,)
+  (x v m .) (macro . .)
+  (z v m /) (macro / /)
 )
 
 ;; ============================================================
