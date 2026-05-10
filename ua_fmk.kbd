@@ -3,52 +3,28 @@
 )
 
 (defsrc
-  q w e r t y u i o p
-  a s d f g h j k l ;
-  z x c v b n m , . /
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+(defchords mychords 50
+  (e f) y
+)
+
+(defalias
+  ec (chord mychords e)
+  fc (chord mychords f)
 )
 
 (deflayer base
-  q w e r t y u i o p
-  a s d f g h j k l ;
-  z x c v b n m , . /
-)
-
-(defchordsv2-experimental
-  ;; ========== 第一行 q w e r t y u i o p ==========
-  ;; 左手并击
-  (e f) y 50 first-release ()   ;; ef -> y
-  (e r) u 50 first-release ()   ;; er -> u
-  (w e) r 50 first-release ()   ;; we -> r
-  (w r) t 50 first-release ()   ;; wr -> t
-  (q r) p 50 first-release ()   ;; qr -> p
-
-  ;; 右手并击
-  (j i) y 50 first-release ()   ;; ji -> y
-  (u i) u 50 first-release ()   ;; ui -> u
-  (i o) i 50 first-release ()   ;; io -> i
-  (u o) o 50 first-release ()   ;; uo -> o
-  (p u) p 50 first-release ()   ;; pu -> p
-
-  ;; ========== 第二行 a s d f g h j k l ; ==========
-  ;; 左手并击
-  (w f) h 50 first-release ()   ;; wf -> h
-  (d f) g 50 first-release ()   ;; df -> g
-  (s d) f 50 first-release ()   ;; sd -> f
-  (s f) d 50 first-release ()   ;; sf -> d
-  (a f) s 50 first-release ()   ;; af -> s
-
-  ;; 右手并击
-  (j o) j 50 first-release ()   ;; jo -> j
-  (j k) k 50 first-release ()   ;; jk -> k
-  (k l) l 50 first-release ()   ;; kl -> l
-  (j l) ; 50 first-release ()   ;; jl -> ;
-
-  ;; ========== 第三行 z x c v b n m , . / ==========
-  ;; 左手并击
-  (s c) n 50 first-release ()   ;; sc -> n
-  (c v) v 50 first-release ()   ;; cv -> v
-  (x c) c 50 first-release ()   ;; xc -> c
-  (x v) b 50 first-release ()   ;; xv -> b
-  (z v) / 50 first-release ()   ;; zv -> /
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    @ec  r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    @fc  g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
 )
