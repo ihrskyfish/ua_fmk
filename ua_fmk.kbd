@@ -1,4 +1,4 @@
-;; -*- mode: kbd; eval: (local-set-key (kbd "C-c d")  (lambda () (interactive) (execute-kbd-macro (kbd "C-M-! echo 111")) ) -*-
+;; -*- mode: lisp; eval: (local-set-key (kbd "C-c d")  (lambda () (interactive) (execute-kbd-macro (kbd "C-M-! echo 111")) ) ) -*-
 
 ;; 速录宝小写键盘 Kanata 配置
 ;; 并击组：所有组合键放在一个 chords 组里
@@ -131,6 +131,11 @@
   (x c , .) (macro , ,)
   (x v m .) (macro . .)
   (z v m /) (macro / /)
+
+
+
+======================
+
 )
 
 ;; ============================================================
