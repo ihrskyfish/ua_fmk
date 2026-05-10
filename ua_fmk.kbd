@@ -1,32 +1,128 @@
+;; 速录宝小写键盘 Kanata 配置
+;; 并击组：所有组合键放在一个 chords 组里
+
 (defcfg
   process-unmapped-keys yes
 )
 
 (defsrc
-  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet rctl
+  q w e r t y u i o p
+  a s d f g h j k l ;
+  z x c v b n m , . /
 )
 
-(defchords mychords 50
-  (e f) y
-  (e ) e
-  (f ) (macro f f )
+;; ============================================================
+;; 并击组：所有组合键放在同一个 chords 组里
+;; ============================================================
+(defchords chording 200
+  ;; 第一行输出
+  (q) q
+  (w) w
+  (e) e
+  (r) r
+  (t) t
+  (e f) y      ;; 左手 e+f 同时按 → y
+  (e r) u      ;; 左手 e+r 同时按 → u
+  (w e) i      ;; 左手 w+e 同时按 → i
+  (w r) o      ;; 左手 w+r 同时按 → o
+  (q r) p      ;; 左手 q+r 同时按 → p
+  (p) q       ;; 右手 p → q（第二组）
+  (o) w       ;; 右手 o → w
+  (i) e       ;; 右手 i → e
+  (u) r       ;; 右手 u → r
+  (y) t       ;; 右手 y → t
+  (j i) y      ;; 右手 j+i 同时按 → y（带点）
+  (u i) u      ;; 右手 u+i 同时按 → u（带点）
+  (i o) i      ;; 右手 i+o 同时按 → i（带点）
+  (u o) o      ;; 右手 u+o 同时按 → o（带点）
+  (p u) p      ;; 右手 p+u 同时按 → p（带点）
+
+  ;; 第二行输出
+  (a) a
+  (s) s
+  (d) d
+  (f) f
+  (g) g
+  (w f) h      ;; 左手 w+f 同时按 → h
+  (d f) j      ;; 左手 d+f 同时按 → j
+  (s d) k      ;; 左手 s+d 同时按 → k
+  (s f) l      ;; 左手 s+f 同时按 → l
+  (a f) ;      ;; 左手 a+f 同时按 → ;
+  (;) a       ;; 右手 ; → a（第二组）
+  (l) s       ;; 右手 l → s
+  (k) d       ;; 右手 k → d
+  (j) f       ;; 右手 j → f
+  (h) g       ;; 右手 h → g
+  (j o) h      ;; 右手 j+o 同时按 → h（带点）
+  (j k) j      ;; 右手 j+k 同时按 → j（带点）
+  (k l) k      ;; 右手 k+l 同时按 → k（带点）
+  (j l) l      ;; 右手 j+l 同时按 → l（带点）
+  (j ;) ;      ;; 右手 j+; 同时按 → ;（带点）
+
+  ;; 第三行输出
+  (z) z
+  (x) x
+  (c) c
+  (v) v
+  (b) b
+  (s c) n      ;; 左手 s+c 同时按 → n
+  (c v) m      ;; 左手 c+v 同时按 → m
+  (x c) ,      ;; 左手 x+c 同时按 → ,
+  (x v) .      ;; 左手 x+v 同时按 → .
+  (z v) /      ;; 左手 z+v 同时按 → /
+  (/) z       ;; 右手 / → z（第二组）
+  (.) x       ;; 右手 . → x
+  (,) c       ;; 右手 , → c
+  (m) v       ;; 右手 m → v
+  (n) b       ;; 右手 n → b
+  (m l) n      ;; 右手 m+l 同时按 → n（带点）
+  (m ,) m      ;; 右手 m+, 同时按 → m（带点）
+  (, .) ,      ;; 右手 ,+. 同时按 → ,（带点）
+  (m .) .      ;; 右手 m+. 同时按 → .（带点）
+  (m /) /      ;; 右手 m+/ 同时按 → /（带点）
 )
 
+;; ============================================================
+;; 别名定义：每个按键对应一个别名
+;; ============================================================
 (defalias
-  ec (chord mychords e)
-  fc (chord mychords f)
+  q (chord chording q)
+  w (chord chording w)
+  e (chord chording e)
+  r (chord chording r)
+  t (chord chording t)
+  y (chord chording y)
+  u (chord chording u)
+  i (chord chording i)
+  o (chord chording o)
+  p (chord chording p)
+  a (chord chording a)
+  s (chord chording s)
+  d (chord chording d)
+  f (chord chording f)
+  g (chord chording g)
+  h (chord chording h)
+  j (chord chording j)
+  k (chord chording k)
+  l (chord chording l)
+  ; (chord chording ;)
+  z (chord chording z)
+  x (chord chording x)
+  c (chord chording c)
+  v (chord chording v)
+  b (chord chording b)
+  n (chord chording n)
+  m (chord chording m)
+  , (chord chording ,)
+  . (chord chording .)
+  / (chord chording /)
 )
 
+;; ============================================================
+;; 基础层：引用别名
+;; ============================================================
 (deflayer base
-  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    @ec  r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    @fc  g    h    j    k    l    ;    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet rctl
+  @q  @w  @e  @r  @t  @y  @u  @i  @o  @p
+  @a  @s  @d  @f  @g  @h  @j  @k  @l  @;
+  @z  @x  @c  @v  @b  @n  @m  @,  @.  @/
 )
