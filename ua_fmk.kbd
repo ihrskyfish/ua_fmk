@@ -16,7 +16,7 @@
 )
 
 (defalias
-  dual (layer-while-held dual)
+  dual (tap-hold 200 200 spc (layer-while-held dual))
   )
 
 ;; ============================================================
