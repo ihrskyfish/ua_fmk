@@ -13,6 +13,8 @@
 
 (defchords mychords 50
   (e f) y
+  (e ) e
+  (f ) (macro f f )
 )
 
 (defalias
