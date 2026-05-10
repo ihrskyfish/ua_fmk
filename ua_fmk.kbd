@@ -2,7 +2,7 @@
 ;; 并击组：所有组合键放在一个 chords 组里
 
 (defcfg
-  process-unmapped-keys yes
+  process-unmapped-keys no
 )
 
 (defsrc
