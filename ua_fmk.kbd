@@ -1,0 +1,20 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  ;; 定义你键盘上用于并击的按键
+  a s d f j k l ;
+)
+
+(deflayer base
+  ;; 基础层，可定义切换并击层的按键
+  _ _ _ _ _ _ _ _
+)
+
+(deflayer kongming
+  ;; 空明码并击层示例
+  ;; 将物理按键映射为特定输出（配合 Rime 空明码方案）
+  (unicode a) (unicode s) (unicode d) (unicode f)
+  (unicode j) (unicode k) (unicode l) (unicode ;)
+)
