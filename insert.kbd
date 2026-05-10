@@ -1,0 +1,50 @@
+(defcfg
+  process-unmapped-keys yes
+  concurrent-tap-hold yes
+)
+
+(defsrc
+  q w e r t y u i o p
+  a s d f g h j k l ;
+  z x c v b n m , . /
+)
+
+(deflayer base
+  q w e r t y u i o p
+  a s d f g h j k l ;
+  z x c v b n m , . /
+)
+
+(defchordsv2
+  ;; ========== 第一行 q w e r t y u i o p ==========
+  (e f) (macro y) 50 first-release ()
+  (e r) (macro u) 50 first-release ()
+  (w e) (macro r) 50 first-release ()
+  (w r) (macro t) 50 first-release ()
+  (q r) (macro p) 50 first-release ()
+
+  (j i) (macro y) 50 first-release ()
+  (u i) (macro u) 50 first-release ()
+  (i o) (macro i) 50 first-release ()
+  (u o) (macro o) 50 first-release ()
+  (p u) (macro p) 50 first-release ()
+
+  ;; ========== 第二行 a s d f g h j k l ; ==========
+  (w f) (macro h) 50 first-release ()
+  (d f) (macro g) 50 first-release ()
+  (s d) (macro f) 50 first-release ()
+  (s f) (macro d) 50 first-release ()
+  (a f) (macro s) 50 first-release ()
+
+  (j o) (macro j) 50 first-release ()
+  (j k) (macro k) 50 first-release ()
+  (k l) (macro l) 50 first-release ()
+  (j l) (macro ;) 50 first-release ()
+
+  ;; ========== 第三行 z x c v b n m , . / ==========
+  (s c) (macro n) 50 first-release ()
+  (c v) (macro v) 50 first-release ()
+  (x c) (macro c) 50 first-release ()
+  (x v) (macro b) 50 first-release ()
+  (z v) (macro /) 50 first-release ()
+)
