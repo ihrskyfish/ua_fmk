@@ -16,7 +16,9 @@
 )
 
 (defalias
-  dual (tap-hold 200 200 spc (layer-while-held dual))
+  dual (tap-hold 200 200 spc (layer-switch dual))
+  ;; dual (tap-hold 200 200 spc (layer-while-held dual))
+  dual_back_base (tap-hold 200 200 spc (layer-switch base))
   )
 
 ;; ============================================================
@@ -1068,5 +1070,5 @@
   @q @w @e @r @t   @y @u @i @o @p
   @a @s @d @f @g   @h @j @k @l @;
   @z @x @c @v @b   @n @m @, @. @/
-  _
+  @dual_back_base
 )
