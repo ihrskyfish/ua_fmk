@@ -1,4 +1,4 @@
-;; -*- mode: lisp; eval: (local-set-key (kbd "C-c d")  (lambda () (interactive) (execute-kbd-macro (kbd "C-x C-s <escape> & <down> k a n a t a <tab> - - d e b u g SPC - - c f g SPC <return>")) ) ) -*-
+;; -*- mode: lisp; eval: (local-set-key (kbd "C-c <f5>")  (lambda () (interactive) (execute-kbd-macro (kbd "C-x C-s <escape> & <down> k a n a t a <tab> - - d e b u g SPC - - c f g SPC <return>")) ) ) -*-
 
 
 ;; 速录宝小写键盘 Kanata 配置
