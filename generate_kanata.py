@@ -45,4 +45,14 @@ print()
 # 输出格式示例
 for i, ((c1a, c1b), (c2a, c2b)) in enumerate(paired, 1):
     # print(f"{i:3d}. 第1列积: ({c1a!r}, {c1b!r})  |  第2列积: ({c2a!r}, {c2b!r})")
-    print(f" ({c1a}, {c1b})   (  macro   {c2a} {c2b} ) ")
+    print(f" ({c1a} {c1b}  spc )   (  macro   {c2a} {c2b} spc ) ")
+
+
+
+print("------------------------------")    
+for i, (input, output) in enumerate(list_A, 1):
+    print(f" ({input}     spc )   (  macro   {output}  spc ) " )
+
+
+    
+    
