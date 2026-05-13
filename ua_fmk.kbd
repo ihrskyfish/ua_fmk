@@ -98,6 +98,37 @@
   (m /) /      ;; 右手 m+/ 同时按 → /（带点）
 
 
+
+   (q     spc )   (  macro   q  spc ) 
+ (w     spc )   (  macro   w  spc ) 
+ (e     spc )   (  macro   e  spc ) 
+ (r     spc )   (  macro   r  spc ) 
+ (t     spc )   (  macro   t  spc ) 
+ (e f     spc )   (  macro   y  spc ) 
+ (e r     spc )   (  macro   u  spc ) 
+ (w e     spc )   (  macro   i  spc ) 
+ (w r     spc )   (  macro   o  spc ) 
+ (q r     spc )   (  macro   p  spc ) 
+ (a     spc )   (  macro   a  spc ) 
+ (s     spc )   (  macro   s  spc ) 
+ (d     spc )   (  macro   d  spc ) 
+ (f     spc )   (  macro   f  spc ) 
+ (g     spc )   (  macro   g  spc ) 
+ (w f     spc )   (  macro   h  spc ) 
+ (d f     spc )   (  macro   j  spc ) 
+ (s d     spc )   (  macro   k  spc ) 
+ (s f     spc )   (  macro   l  spc ) 
+ (a f     spc )   (  macro   ;  spc ) 
+ (z     spc )   (  macro   z  spc ) 
+ (x     spc )   (  macro   x  spc ) 
+ (c     spc )   (  macro   c  spc ) 
+ (v     spc )   (  macro   v  spc ) 
+ (b     spc )   (  macro   b  spc ) 
+ (s c     spc )   (  macro   n  spc ) 
+ (c v     spc )   (  macro   m  spc ) 
+ (x c     spc )   (  macro   ,  spc ) 
+ (x v     spc )   (  macro   .  spc ) 
+ (z v     spc )   (  macro   /  spc )  
 ;;group-A&B
 ;; ===== 左右手同时：对应位置组合 =====
 
