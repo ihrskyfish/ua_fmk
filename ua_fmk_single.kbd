@@ -1,0 +1,129 @@
+;; -*- mode: lisp; eval: (local-set-key (kbd "C-c <f5>")  (lambda () (interactive) (execute-kbd-macro (kbd "C-x C-s <escape> & <down> k a n a t a <tab> - - d e b u g SPC - - c f g SPC <return>")) ) ) -*-
+
+
+;; 速录宝小写键盘 Kanata 配置
+;; 并击组：所有组合键放在一个 chords 组里
+
+(defcfg
+  process-unmapped-keys no
+)
+
+(defsrc
+  q w e r t
+  a s d f g
+  z x c v b
+ spc  
+)
+
+
+
+;; ============================================================
+;; 并击组：所有组合键放在同一个 chords 组里
+;; ============================================================
+(defchords chording 200
+    (spc ) spc
+;;group-A
+  ;; 第一行输出
+
+  (q) q
+  (w) w
+  (e) e
+  (r) r
+  (t) t
+  (e f) y      ;; 左手 e+f 同时按 → y
+  (e r) u      ;; 左手 e+r 同时按 → u
+  (w e) i      ;; 左手 w+e 同时按 → i
+  (w r) o      ;; 左手 w+r 同时按 → o
+  (q r) p      ;; 左手 q+r 同时按 → p
+
+  ;; 第二行输出
+  (a) a
+  (s) s
+  (d) d
+  (f) f
+  (g) g
+  (w f) h      ;; 左手 w+f 同时按 → h
+  (d f) j      ;; 左手 d+f 同时按 → j
+  (s d) k      ;; 左手 s+d 同时按 → k
+  (s f) l      ;; 左手 s+f 同时按 → l
+  (a f) ;      ;; 左手 a+f 同时按 → ;
+
+  ;; 第三行输出
+  (z) z
+  (x) x
+  (c) c
+  (v) v
+  (b) b
+  (s c) n      ;; 左手 s+c 同时按 → n
+  (c v) m      ;; 左手 c+v 同时按 → m
+  (x c) ,      ;; 左手 x+c 同时按 → ,
+  (x v) .      ;; 左手 x+v 同时按 → .
+  (z v) /      ;; 左手 z+v 同时按 → /
+
+
+
+)
+
+;; ============================================================
+;; 别名定义：每个按键对应一个别名
+;; ============================================================
+(defalias
+  q (chord chording q)
+  w (chord chording w)
+  e (chord chording e)
+  r (chord chording r)
+  t (chord chording t)
+  
+
+  a (chord chording a)
+  s (chord chording s)
+  d (chord chording d)
+  f (chord chording f)
+  g (chord chording g)
+
+  
+
+  z (chord chording z)
+  x (chord chording x)
+  c (chord chording c)
+  v (chord chording v)
+  b (chord chording b)
+  
+  spc (chord chording spc)
+
+  )
+(defalias
+  dual (tap-hold 200 200 spc (layer-switch dual))
+  ;; dual (tap-hold 200 200 spc (layer-while-held dual))
+  dual_back_base (tap-hold 200 200 @spc (layer-switch base))
+  )
+
+;; ============================================================
+;; 基础层：引用别名
+;; ============================================================
+;; (deflayer base
+;;   @q  @w  @e  @r  @t  @y  @u  @i  @o  @p
+;;   @a  @s  @d  @f  @g  @h  @j  @k  @l  @;
+;;   @z  @x  @c  @v  @b  @n  @m  @,  @.  @/
+  
+;; )
+
+
+
+
+;; ========== 基础层：正常打字 ==========
+(deflayer base
+  q w e r t 
+  a s d f g 
+  z x c v b 
+  @dual
+  )
+
+
+;; ========== 并击层：按住 Space 激活 ==========
+(deflayer dual
+  @q @w @e @r @t  
+  @a @s @d @f @g  
+  @z @x @c @v @b  
+  @dual_back_base
+)
